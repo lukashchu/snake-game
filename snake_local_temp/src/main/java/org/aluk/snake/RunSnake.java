@@ -24,20 +24,20 @@ public class RunSnake implements Runnable {
         final JLabel status = new JLabel("Waiting...");
 
         // Control panel
-        final JPanel control_panel = new JPanel();
-        frame.add(control_panel, BorderLayout.NORTH);
+        final JPanel controlPanel = new JPanel();
+        frame.add(controlPanel, BorderLayout.NORTH);
 
         // Timer
         final JLabel time = new JLabel("00:00.000");
-        control_panel.add(time);
+        controlPanel.add(time);
 
         // Current Score
         final JLabel currScore = new JLabel("Score: 0");
-        control_panel.add(currScore);
+        controlPanel.add(currScore);
 
         // High Score
         final JLabel highScore = new JLabel("High Score: 0");
-        control_panel.add(highScore);
+        controlPanel.add(highScore);
 
         // Main playing area
         final GameBoard board = new GameBoard(status, currScore, highScore, time);
@@ -46,10 +46,10 @@ public class RunSnake implements Runnable {
         // Reset button
         final JButton reset = new JButton("Reset");
         reset.addActionListener(e -> board.reset());
-        control_panel.add(reset);
+        controlPanel.add(reset);
 
         // Add status
-        control_panel.add(status);
+        controlPanel.add(status);
 
         // Put the frame on the screen
         frame.pack();

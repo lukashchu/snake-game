@@ -39,14 +39,15 @@ public class GameBoard extends JPanel {
         Timer timer = new Timer(INTERVAL, e -> tick());
         timer.start();
         playing = false;
+        
 
         addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+                if (e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode() == 'A') {
                     if (s.getHead().getDirection() == 1 || s.getHead().getDirection() == 3) {
                         s.getHead().setDirection(2);
                     }
-                } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+                } else if (e.getKeyCode() == KeyEvent.VK_RIGHT || e.getKeyCode() == 'D') {
                     if (s.getHead().getDirection() == 4) {
                         timerOn = true;
                         s.getHead().setDirection(0);
@@ -56,11 +57,11 @@ public class GameBoard extends JPanel {
                     if (s.getHead().getDirection() == 1 || s.getHead().getDirection() == 3) {
                         s.getHead().setDirection(0);
                     }
-                } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+                } else if (e.getKeyCode() == KeyEvent.VK_DOWN || e.getKeyCode() == 'S') {
                     if (s.getHead().getDirection() == 0 || s.getHead().getDirection() == 2) {
                         s.getHead().setDirection(1);
                     }
-                } else if (e.getKeyCode() == KeyEvent.VK_UP) {
+                } else if (e.getKeyCode() == KeyEvent.VK_UP || e.getKeyCode() == 'W') {
                     if (s.getHead().getDirection() == 0 || s.getHead().getDirection() == 2) {
                         s.getHead().setDirection(3);
                     }

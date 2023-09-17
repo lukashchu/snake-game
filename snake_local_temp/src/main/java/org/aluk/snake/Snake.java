@@ -67,7 +67,7 @@ public class Snake {
     }
 
     public void reset() {
-        snakeList = new ArrayList<SnakeBody>();
+        snakeList = new ArrayList<>();
         snakeHead = new SnakeBody(4, 7);
         snakeList.add(snakeHead);
         snakeList.add(new SnakeBody(3, 7, snakeHead));
@@ -118,8 +118,9 @@ public class Snake {
     public void fileHighScore() {
         try {
             BufferedReader reader = new BufferedReader(new FileReader("files/highscore.txt"));
-            int highScore = Integer.parseInt(reader.readLine());
-            this.highScore = highScore;
+            int newHighScore = Integer.parseInt(reader.readLine());
+            highScore = newHighScore;
+            reader.close();
         } catch (IOException e) {
             this.highScore = 0;
         }
@@ -130,7 +131,6 @@ public class Snake {
             BufferedWriter writer = new BufferedWriter(new FileWriter("files/highscore.txt"));
             writer.write(String.valueOf(highScore));
             writer.close();
-        } catch (IOException e) {
-        }
+        } catch (IOException e) {}
     }
 }

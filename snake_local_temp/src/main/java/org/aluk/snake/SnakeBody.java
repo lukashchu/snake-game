@@ -4,7 +4,6 @@ public class SnakeBody {
     private int x;
     private int y;
     private SnakeBody next;
-    private SnakeBody previous;
     private int direction = 4;
     private int[] lastCoords;
 
@@ -17,7 +16,6 @@ public class SnakeBody {
     public SnakeBody(int x, int y, SnakeBody previous) {
         this.x = x;
         this.y = y;
-        this.previous = previous;
         previous.setNext(this);
         lastCoords = new int[3];
     }
@@ -35,7 +33,7 @@ public class SnakeBody {
     }
 
     public boolean hasNext() {
-        return !(next == null);
+        return (next != null);
     }
 
     public void setNext(SnakeBody next) {
