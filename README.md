@@ -24,9 +24,9 @@ A classic Snake game implemented using Java Swing. This lightweight, standalone 
 
 ## 💾 High Score Storage
 
-High score is saved to: `files/highscore.txt`
+High score is saved to: `snake_local_temp/files/highscore.txt`
 
-Make sure this `files/` directory exists and is writable. The game will create the file if it doesn't already exist.
+Make sure this `snake_local_temp/files/` directory exists and is writable. The game will create the file if it doesn't already exist.
 
 ## 🚀 How to Run
 
@@ -35,33 +35,41 @@ Make sure this `files/` directory exists and is writable. The game will create t
 
 ### Option 1: Run from Source
 ```bash
-javac -d bin src/org/aluk/*.java src/org/aluk/snake/*.java
+javac -d bin src/main/java/org/aluk/*.java src/main/java/org/aluk/snake/*.java
 java -cp bin org.aluk.Game
 ```
 
 ### Option 2: Run Executable JAR
 If you've downloaded the pre-built JAR:
 ```bash
-java -jar SnakeGame.jar
+java -jar snake-game.jar
 ```
 > Tip: Double-clicking the JAR on most systems will launch the game.
 
 ## 🗂 Project Structure
 ```cpp
-SnakeGame/
-├── src/
-│   └── org/
-│       └── aluk/
-│           ├── Game.java
-│           └── snake/
-│               ├── GameBoard.java
-│               ├── RunSnake.java
-│               ├── Snake.java
-│               └── SnakeBody.java
-├── files/
-│   └── highscore.txt
-├── bin/ (compiled classes)
-└── SnakeGame.jar (optional)
+snake-game/
+├── snake_local_temp/
+│   ├── files/
+│   │   └── highscore.txt
+│   └── src/
+│       ├── main/
+│       │   └── java/
+│       │       └── org/
+│       │           └── aluk/
+│       │               ├── Game.java
+│       │               └── snake/
+│       │                   ├── GameBoard.java
+│       │                   ├── RunSnake.java
+│       │                   ├── Snake.java
+│       │                   └── SnakeBody.java
+│       └── test/
+│           └── java/
+│               └── org/
+│                   └── aluk/
+│                       └── snake/
+│                           └── GameTest.java
+└── snake-game.jar
 ```
 
 ## 🛠 Customization
